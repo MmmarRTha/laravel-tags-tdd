@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,5 @@ Route::get('/', function () {
         'tags' => \App\Models\Tag::get(),
     ]);
 });
+
+Route::post('/tags', [TagController::class, 'store']);

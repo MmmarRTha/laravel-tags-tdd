@@ -9,7 +9,9 @@
         <h4>Tag list</h4>
         <table>
             @forelse ($tags as $tag)
-                
+                <tr>
+                    <td>{{ $tag->name }}</td>
+                </tr>
             @empty
             <tr>
                 <td>

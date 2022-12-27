@@ -4,9 +4,7 @@ namespace Tests\Feature\Http\Controllers;
 
 use App\Models\Tag;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-
 class TagControllerTest extends TestCase
 {
     use RefreshDatabase;

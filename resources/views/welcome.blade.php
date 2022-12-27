@@ -6,11 +6,25 @@
         <title>Laravel</title>
     </head>
     <body>
+        <form action="tags" method="POST">
+            @csrf
+            <input type="text" name="name" placeholder="Tag name">
+            <input type="submit" value="Add Tag">
+        </form>
+
         <h4>Tag list</h4>
         <table>
             @forelse ($tags as $tag)
                 <tr>
                     <td>{{ $tag->name }}</td>
+                    <td>
+                        <form action="tags/{{ $tag->id }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete">
+                        </form>
+                        </form>
+                    </td>
                 </tr>
             @empty
             <tr>

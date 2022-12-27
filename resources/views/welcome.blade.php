@@ -8,6 +8,13 @@
     </head>
     <body class="bg-gray-200 py-10">
         <div class="max-w-lg bg-white mx-auto p-5 rounded shadows">
+            @if ($errors->any())
+            <ul class="list-none p-1 mb-1 bg-red-100 text-sm">
+                @foreach ($errors->all() as $error)
+                    <li class="text-red-500">{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
             <form action="tags" method="POST" class="flex mb-4">
                 @csrf
                 <input type="text" name="name" placeholder="Tag name" class="rounded-l bg-gray-200 p-4 w-full outline-none">

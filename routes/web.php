@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\TagController;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TagController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'tags' => \App\Models\Tag::get(),
+        'tags' => Tag::get(),
     ]);
 });
 
